@@ -1,5 +1,3 @@
-# low_light_Image_Enhancement
-
 # Overview
 GUI Design with CustomTkinter
 
