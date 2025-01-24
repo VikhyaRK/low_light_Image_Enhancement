@@ -1,23 +1,24 @@
-# Overview
-GUI Design with CustomTkinter
+# Low-Light Image Enhancement using Zero-DCE  
 
-Created an interactive interface using CustomTkinter with a user-friendly layout.
-Added input fields for user prompts and a dedicated area to display generated images.
-Integration of the Stable Diffusion Model
+## Overview  
+This project implements a self-supervised low-light image enhancement model based on the Deep Curve Estimation Network (DCE-Net). The model enhances visibility in low-light images without requiring reference images by applying iterative non-linear transformations guided by domain-specific loss functions.  
 
-Configured and loaded the pre-trained Stable Diffusion model from Hugging Face using the Diffusers library.
-Implemented multi-device compatibility (GPU and CPU) with automatic detection for optimized performance.
-Optimized Model Execution
+## Key Features  
+1. **Model Architecture**: Built a custom DCE-Net using convolutional layers to estimate enhancement curves iteratively applied to input images.  
+2. **Loss Functions**: Designed and implemented custom loss functions to ensure:  
+   - **Spatial Consistency**: Preserving structural details.  
+   - **Illumination Smoothness**: Ensuring smooth brightness transitions.  
+   - **Color Constancy**: Maintaining natural color balance.  
+   - **Exposure Correction**: Adjusting brightness to optimal levels.  
+3. **Data Preprocessing**: Created a data pipeline using TensorFlow to load, resize, and normalize low-light images efficiently.  
+4. **Model Training**: Trained the model on a dataset of 1,000+ low-light images using custom loss functions and the Adam optimizer.  
+5. **Evaluation**: Achieved robust performance on benchmark datasets by visualizing and analyzing enhancement results.  
 
-Enabled floating-point precision handling (fp16 for GPU and fp32 for CPU) for efficient memory usage.
-Incorporated PyTorch's torch.no_grad() to ensure computation efficiency during inference.
-Image Generation Pipeline
+## Steps I Followed  
+1. Defined and built the DCE-Net architecture using TensorFlow and Keras.  
+2. Developed a data pipeline for preprocessing and batching low-light images.  
+3. Designed custom loss functions to guide the enhancement process.  
+4. Compiled and trained the model using TensorFlow's training API and tracked loss metrics.  
+5. Evaluated the model on unseen test datasets and visualized enhanced images.  
 
-Processed user prompts to generate high-quality 512x512 images in under 10 seconds on GPU.
-Implemented image saving and dynamic rendering in the GUI using PIL's ImageTk module.
-Button and Event Handling
-
-Added a "Generate" button linked to the image generation function, allowing users to trigger image creation seamlessly.
-Error Handling and Feedback
-
-Integrated exception handling for robust performance and clear feedback in case of model or input errors.
+This project highlights advanced techniques in self-supervised learning and computer vision for real-world low-light image enhancement applications.
